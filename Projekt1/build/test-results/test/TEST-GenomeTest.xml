@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="GenomeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-12-14T16:22:10" hostname="LAPTOP-T90R0JPC" time="0.023">
+  <properties/>
+  <testcase name="printGenome()" classname="GenomeTest" time="0.023"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

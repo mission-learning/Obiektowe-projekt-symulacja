@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="Table" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="WorldController">
+   <bottom>
+      <HBox alignment="TOP_CENTER" prefHeight="50.0" prefWidth="803.0" BorderPane.alignment="TOP_LEFT">
+         <children>
+            <Button fx:id="resetButton" alignment="CENTER" mnemonicParsing="false" onAction="#reset" prefHeight="40.0" prefWidth="90.0" text="Reset" />
+            <Button fx:id="startButton" alignment="CENTER" mnemonicParsing="false" onAction="#start" prefHeight="40.0" prefWidth="90.0" text="Start" />
+            <Button fx:id="stopButton" alignment="CENTER" mnemonicParsing="false" onAction="#stop" prefHeight="40.0" prefWidth="90.0" text="Stop" />
+            <Button fx:id="stepButton" alignment="CENTER" mnemonicParsing="false" onAction="#step" prefHeight="40.0" prefWidth="90.0" text="Step" />
+         </children>
+      </HBox>
+   </bottom>
+   <top>
+      <Label text="Evolution simulation" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding></Label>
+   </top>
+   <right>
+      <Pane prefWidth="195.0" BorderPane.alignment="CENTER_RIGHT">
+         <children>
+            <VBox alignment="TOP_CENTER" layoutX="3.0" prefHeight="204.0" prefWidth="190.0">
+               <children>
+                  <Label text="Dominujący genotyp" />
+                  <TextField fx:id="dominujacyGenotyp1" alignment="CENTER">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label text="Średnia energia" />
+                  <TextField fx:id="sredniaEnergia1" alignment="CENTER">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label text="Średnia długość życia" />
+                  <TextField fx:id="sredniaDlugoscZycia1" alignment="CENTER">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label text="Średnia liczba dzieci" />
+                  <TextField fx:id="sredniaLiczbaDzieci1" alignment="CENTER" />
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="3.0" layoutY="261.0" prefWidth="190.0">
+               <children>
+                  <Label text="Dominujący genotyp" />
+                  <TextField fx:id="dominujacyGenotyp2" alignment="CENTER" prefWidth="132.0">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label text="Średnia energia" />
+                  <TextField fx:id="sredniaEnergia2" alignment="CENTER">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label text="Średnia długość życia" />
+                  <TextField fx:id="sredniaDlugoscZycia2" alignment="CENTER">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label text="Średnia liczba dzieci" />
+                  <TextField fx:id="sredniaLiczbaDzieci2" alignment="CENTER" />
+               </children>
+            </VBox>
+            <HBox layoutX="-2.0" layoutY="528.0" prefHeight="44.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#showPopularAnimal1" text="Show Animals1">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#showPopularAnimal2" text="Show Animals2" />
+               </children></HBox>
+            <Button fx:id="start1" layoutX="3.0" layoutY="214.0" mnemonicParsing="false" onAction="#start1" text="Start1" />
+            <Button fx:id="stop1" layoutX="50.0" layoutY="214.0" mnemonicParsing="false" onAction="#stop1" text="Stop1" />
+            <Button fx:id="start2" layoutX="3.0" layoutY="475.0" mnemonicParsing="false" onAction="#start2" text="Start2" />
+            <Button fx:id="stop2" layoutX="50.0" layoutY="475.0" mnemonicParsing="false" onAction="#stop2" text="Stop2" />
+            <TextField fx:id="epoka1" layoutX="146.0" layoutY="214.0" prefHeight="25.0" prefWidth="40.0" />
+            <Label layoutX="97.0" layoutY="218.0" text="EPOKA1">
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+            </Label>
+            <Label layoutX="97.0" layoutY="479.0" text="EPOKA2">
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="epoka2" layoutX="146.0" layoutY="475.0" prefHeight="25.0" prefWidth="40.0" />
+         </children>
+      </Pane>
+   </right>
+   <center>
+      <SplitPane fx:id="Maps" dividerPositions="0.5" orientation="VERTICAL" prefHeight="500.0" prefWidth="810.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane fx:id="place2" minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="810.0" SplitPane.resizableWithParent="false">
+               <children>
+                  <Pane fx:id="World1" layoutX="2.0" prefHeight="240.0" prefWidth="800.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane fx:id="place1" minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="810.0">
+               <children>
+                  <Pane fx:id="World2" layoutX="2.0" prefHeight="240.0" prefWidth="800.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </center>
+   <left>
+      <Pane prefHeight="572.0" prefWidth="191.0" BorderPane.alignment="TOP_CENTER">
+         <children>
+            <Label layoutX="55.0" layoutY="14.0" text="Liczba Zwierząt" />
+            <VBox layoutY="31.0" prefHeight="120.0" prefWidth="190.0">
+               <children>
+                  <Label prefHeight="20.0" prefWidth="54.0" text="Mapa1">
+                     <VBox.margin>
+                        <Insets left="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="liczbaZwierzat1" alignment="CENTER" editable="false" prefHeight="26.0" prefWidth="50.0">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label text="Mapa2">
+                     <VBox.margin>
+                        <Insets left="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="liczbaZwierzat2" alignment="CENTER" editable="false" />
+               </children>
+            </VBox>
+            <Label layoutX="60.0" layoutY="167.0" prefHeight="13.0" prefWidth="70.0" text="Liczba Roślin" />
+            <VBox layoutX="1.0" layoutY="190.0" prefHeight="120.0" prefWidth="190.0">
+               <children>
+                  <Label text="Mapa1">
+                     <VBox.margin>
+                        <Insets left="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="liczbaRoslin1" alignment="CENTER" editable="false">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label text="Mapa2">
+                     <VBox.margin>
+                        <Insets left="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="liczbaRoslin2" alignment="CENTER" editable="false">
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin></TextField>
+               </children>
+            </VBox>
+            <TextField fx:id="wybranyZwierzak" alignment="CENTER" editable="false" layoutX="21.0" layoutY="336.0" prefHeight="26.0" />
+            <Label fx:id="wybranyZwierzakLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="318.0" prefHeight="18.0" prefWidth="190.0" text="Wybrany Zwierzak" />
+            <Label fx:id="liczbaEpokLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="41.0" layoutY="374.0" prefHeight="17.0" text=" Wpisz numer epoki:" />
+            <TextField fx:id="liczbaEpok" alignment="CENTER" layoutX="22.0" layoutY="391.0" prefHeight="25.0" prefWidth="65.0" />
+            <HBox layoutX="-1.0" layoutY="443.0" prefHeight="130.0" prefWidth="193.0">
+               <children>
+                  <VBox prefHeight="130.0" prefWidth="118.0">
+                     <children>
+                        <Label fx:id="liczbaDzieciLabel" prefHeight="18.0" prefWidth="98.0" text="Liczba dzieci:">
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="liczbaPotomkowLabel" prefHeight="18.0" prefWidth="98.0" text="Liczba potomków:">
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="czyZyjeLabel" prefHeight="18.0" prefWidth="123.0" text="Śmierć:">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="130.0" prefWidth="83.0">
+                     <children>
+                        <TextField fx:id="liczbaDzieci" editable="false" prefHeight="18.0">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="liczbaPotomkow" editable="false">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="czyZyje" editable="false" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Button fx:id="accept" layoutX="104.0" layoutY="391.0" mnemonicParsing="false" onMouseClicked="#getN" text="Akceptuj" />
+         </children>
+      </Pane>
+   </left>
+</BorderPane>
