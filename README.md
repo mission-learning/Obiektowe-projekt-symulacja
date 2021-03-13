@@ -1,21 +1,23 @@
 # Obiektowe-projekt-symulacja
 
-
-Projekt niestety nie spełnia następujących wymagań:
-nie zczytuje parametrów z pliku oraz nie zapisuje statystyk do pliku.
-Poza nimi, starałam się wszystko uwzględnić w kodzie programu, jednak oczywiście mogłam coś pominąć.
-
 Animacja została wykonana w Java fx, w tym celu założony został projekt gradlowy.
 
-Istotne elementy, które mogą nie być intuicyjne:
-Niestety na początku zaprojektowałam wygląd, a potem uzupełniałam kolejne elementy, przez co napchane jest guzików i innych elementów w każde miejsce opakowania symulacji.
-Górna mapka to mapka nr 1, dolna to mapka nr 2, wszystkie statystyki mają opisy 1/2 w zależności od tego, której mapki dotyczą.
+Projekt przedstawia uproszczoną symulację mechanizmu ewolucji zwierząt. Zwierzęta posiadają pewną ilość energii, którą zużywają na ruch po ograniczonej mapie lub rozmnażanie. Energia może być uzyskana poprzez zjedzenie rośliny, które generują się na mapie w określony sposób. Występują 2 osobne sfery generowania roślin: jungla oraz step otaczający jungle. W każdym dniu generowana jest dokładnie jedna roślina na stepie oraz jedna w jungli. Ponadto każde zwierzę ma swój genotyp, na podstawie którego generowany jest ruch zwierzaka. Genotyp jest przekazywany podczas reprodukcji. Symulacja zawiera wizualizację wykonaną w Java FX oraz pozwala na śledzenie statystyk.
 
-Po zatrzymaniu stosownej mapy (guziki stop1/stop2 lub stop ogólny zatrzymujący całą symulację) można wybrać zwierzaka klikając na niego (wyświetli się wtedy jego genotyp w okienku opisanym "Wybrany zwierzak" oraz zwierzak zmieni na stałe kolor swój na niebieski). Następnie należy wpisać w okienko, które w tym momencie powinno się pojawić, numer epoki, dla której chcemy znać szczegółowe informacje. Informacje te pojawią się w momencie, gdy na danej mapce będzie dokładnie taka epoka.
+Jedna epoka (dzień) składa się z kilku kroków:
+1. Usunięcia martwych zwierząt na mapce
+2. Skręt i przemieszczenie każdego zwierzęcia,
+3. Jedzenie (roślina jest zjadana przez zwierzę posiadające najwięcej energii lub kilka najsilniejszych zwierząt, jeśli więcej niż jedno posiada taką samą, największą energię;  takim przypadku energia rośliny jest dzielona),
+4. Rozmnażanie zwierząt (rozmnażają się zawsze dwa zwierzęta o najwyższej energii na danym polu; jeśli występuje więcej zwierząt o tej samej energii, wybór jest losowy),
+5. Dodanie nowych roślin do mapy.
 
-Jest również opcja showAnimals - pokazuje na ładny niebieski kolor zwierzątka, które mają jako dominujący jeden z 3 dominujących genów na całej mapce.
+Po zatrzymaniu stosownej mapy (guziki stop1/stop2 lub stop zatrzymujący całą symulację) można wybrać zwierzaka klikając na niego (wyświetli się wtedy jego genotyp w okienku opisanym "Wybrany zwierzak" oraz zwierzak zmieni na stałe kolor swój na niebieski). Następnie należy wpisać w okienko, które w tym momencie powinno się pojawić, numer epoki, dla której chcemy znać szczegółowe informacje. Informacje te pojawią się w momencie, gdy na danej mapce będzie dokładnie taka epoka.
+
+Jest również opcja showAnimals pokazująca zwierzęta, które mają jeden z 3 dominujących genów na całej mapce.
 
 Klasy zostały podzielone na specjalne pakiety, co powinno pomóc w interpretacji poszczególnych funkcjonalności.
+
+Projekt został zrealizowany w ramach programu studiów.
 
 
 
